@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+</head>
+<body>
+  <header>
+<nav>
+  <div class="navBar">
+    <div id="main">
+      <span class="mobile_v_navbar" onclick="openNav()">&#9776;</span>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">Collections</a>
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">About</a>
+      <a class="#">Contact</a>
+    </div>    
+    <div class="navBrand">
+      <img class="brand_logo" src="./images/logo.svg"/>
+    </div>
+    <div class="navbar_nav_items">
+      <div class="nav_item desktop_nav">
+          <div class="navbar_itmes_buttons">
+          <a class="navBar_Buttons">Collections</a>
+          <a class="navBar_Buttons">Men</a>
+          <a class="navBar_Buttons">Women</a>
+          <a class="navBar_Buttons">About</a>
+          <a class="navBar_Buttons">Contact</a>
+          </div>
+      </div>
+    </div>
+    <div class="navbar_nav_items">
+      <div class="nav_item">
+        <button class="cart" onclick="cart()" ><img src="./images/icon-cart.svg"/></button>
+        <div class="popup" >
+          <div class="popuptext" id="myPopup">
+            <div class="popup_cart_head">
+            <h3 class="cart_popup_head_text">Cart</h3>
+          </div>
+            <div class="popup_contener">
+              <div class="cart_popup_items">
+                <img class="cart_popup_image" src="./images/image-product-1-thumbnail.jpg" />
+                <a>Fall Limited Edition Sneakers</a>
+                <a class="price_popup_contener">$125x3</a>
+                <a class="trash_icon"><i class="fa fa-trash-o"></i></a>
+              </div>
+              
+           </div>
+           <div class="cart_button_popup">
+             <a>Check Out</a>
+           </div>
+        </div>
+        </div>
+      </div>
+      <div class="nav_item">
+        <img class="avatar" src="./images/image-avatar.png"/>
+      </div>
+    </div>
+    </div>
+</nav>
+</header>
+<main class="main">
+  <section>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="show_contaner">
+        <a class="right_button" onclick="plusDivs(+1)"><img src="./images/icon-next.svg" /></a>
+        <a class="left_button" onclick="plusDivs(-1)"><img src="./images/icon-previous.svg" /></a>
+      <div class="banner_image_slider">
+        <span class="close">&times;</span>
+        <div class="main_banner_slider">
+        <img class="main_banner_image_slider mySlides" src="./images/image-product-1.jpg"style="" />
+        <img class="main_banner_image_slider mySlides" src="./images/image-product-2.jpg"style="display:none" />
+        <img class="main_banner_image_slider mySlides" src="./images/image-product-3.jpg"style="display:none" />
+        <img class="main_banner_image_slider mySlides" src="./images/image-product-4.jpg"style="display:none" />
+        </div>
+        <div class="small_banner_slider" >
+          <img class="small_banner_image_slider" onclick="currentDiv(1)" src="./images/image-product-1-thumbnail.jpg" />
+          <img class="small_banner_image_slider" onclick="currentDiv(2)" src="./images/image-product-2-thumbnail.jpg" />
+          <img class="small_banner_image_slider" onclick="currentDiv(3)" src="./images/image-product-3-thumbnail.jpg" />
+          <img class="small_banner_image_slider" onclick="currentDiv(4)" src="./images/image-product-4-thumbnail.jpg" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="banner_image">
+      <div class="main_banner">
+        <a><img class="main_banner_image" src="./images/image-product-1.jpg" /></a>
+      </div>
+      <div class="small_banner" id="myBtn" >
+        <img class="small_banner_image" src="./images/image-product-1-thumbnail.jpg" />
+        <img class="small_banner_image" src="./images/image-product-2-thumbnail.jpg" />
+        <img class="small_banner_image" src="./images/image-product-3-thumbnail.jpg" />
+        <img class="small_banner_image" src="./images/image-product-4-thumbnail.jpg" />
+      </div>
+    </div>
+    <div class="product">
+    <h3>Sneaker Company</h3>
+    <h1>Fall Limited Edition Sneakers</h1>
+    <p>
+      These low-profile sneakers are your perfect casual wear
+      companion. Featuring a durable rubber outer sole, they’ll 
+      withstand everything the weather can offer.
+    </p>
+      <label>$125.00</label>
+      <a class="discont">50%</a>
+      <a class="before_price">$250.00</a>
+        <div class="number-input">
+          <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+          <input class="quantity" min="0" name="quantity" value="0" type="number">
+          <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+        </div>
+        <div class="add_contaner">          
+          <a class="add_cart"><i class="fa fa-shopping-cart cart_spot"></i>Add to Cart</a>
+        </div>
+        
+    </div> 
+</section>
+</main>
+<footer>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Abdullah Almutairi</a>.
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
