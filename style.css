@@ -74,7 +74,7 @@ nav{
   margin-top: -35px;
   margin-left: 25px;
   padding: 5px 5px;
-  display: block;
+  display: none;
 }
 .main{
     margin-left: auto;
