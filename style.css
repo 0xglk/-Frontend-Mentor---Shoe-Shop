@@ -66,6 +66,15 @@ nav{
     border: none;
     color: rgb(0, 0, 0);
 }
+.cart_items_num{
+  position:absolute; 
+  background-color: #FF7D1A;
+  font-size: 10px;
+  border-radius: 50%;
+  margin-top: -10px;
+  padding: 5px 5px;
+  display: none;
+}
 .main{
     margin-left: auto;
     margin-right: auto;
@@ -598,6 +607,7 @@ input[type="number"] {
   color: white;
   background: #FF7D1A;
   border-radius:5px;
+
 }
 .add_contaner{
   display: inline-block;

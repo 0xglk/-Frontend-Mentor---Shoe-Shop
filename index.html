@@ -44,19 +44,13 @@
     </div>
     <div class="navbar_nav_items">
       <div class="nav_item">
-        <button class="cart" onclick="cart()" ><img src="./images/icon-cart.svg"/></button>
+        <button class="cart" onclick="cart()" ><img src="./images/icon-cart.svg"/><a id="cart_items_num" class="cart_items_num">1</a></button>
         <div class="popup" >
           <div class="popuptext" id="myPopup">
             <div class="popup_cart_head">
             <h3 class="cart_popup_head_text">Cart</h3>
           </div>
-            <div class="popup_contener">
-              <div class="cart_popup_items">
-                <img class="cart_popup_image" src="./images/image-product-1-thumbnail.jpg" />
-                <a>Fall Limited Edition Sneakers</a>
-                <a class="price_popup_contener">$125x3</a>
-                <a class="trash_icon"><i class="fa fa-trash-o"></i></a>
-              </div>
+            <div class="popup_contener" id="popup_contener">
               
            </div>
            <div class="cart_button_popup">
@@ -104,7 +98,7 @@
         <a><img class="main_banner_image" src="./images/image-product-1.jpg" /></a>
       </div>
       <div class="small_banner" id="myBtn" >
-        <img class="small_banner_image" src="./images/image-product-1-thumbnail.jpg" />
+        <img class="small_banner_image" id="item_image" src="./images/image-product-1-thumbnail.jpg" />
         <img class="small_banner_image" src="./images/image-product-2-thumbnail.jpg" />
         <img class="small_banner_image" src="./images/image-product-3-thumbnail.jpg" />
         <img class="small_banner_image" src="./images/image-product-4-thumbnail.jpg" />
@@ -112,22 +106,22 @@
     </div>
     <div class="product">
     <h3>Sneaker Company</h3>
-    <h1>Fall Limited Edition Sneakers</h1>
+    <h1 id="item_name">Fall Limited Edition Sneakers</h1>
     <p>
       These low-profile sneakers are your perfect casual wear
       companion. Featuring a durable rubber outer sole, they’ll 
       withstand everything the weather can offer.
     </p>
-      <label>$125.00</label>
+      <label id="item_price">$125.00</label>
       <a class="discont">50%</a>
       <a class="before_price">$250.00</a>
         <div class="number-input">
           <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
-          <input class="quantity" min="0" name="quantity" value="0" type="number">
+          <input class="quantity" min="0" name="quantity" id="item_per" value="0" type="number">
           <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
         </div>
         <div class="add_contaner">          
-          <a class="add_cart"><i class="fa fa-shopping-cart cart_spot"></i>Add to Cart</a>
+          <a class="add_cart" onclick="cart_items()"><i class="fa fa-shopping-cart cart_spot"></i>Add to Cart</a>
         </div>
         
     </div> 

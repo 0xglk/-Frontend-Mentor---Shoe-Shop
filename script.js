@@ -62,3 +62,32 @@ function currentDiv(n) {
     document.getElementById("mySidenav").style.width = "0";
     document.body.style.backgroundColor = "white";
   }
+  let obj =[];
+  let cart_itmes = []
+  function cart_items(){
+   let itmes_name = document.getElementById("item_name").innerHTML;
+   let items_price = document.getElementById("item_price").innerHTML;
+   let items_per = document.getElementById("item_per").value;
+   let itmes_image = document.getElementById("item_image").src;
+    if (items_per != 0 ) {
+      cart_itmes.push(itmes_name, items_price, items_per, itmes_image);
+      obj.push({cart_itmes})
+      var div = document.createElement('popup_conteneer');
+      div.innerHTML = `
+          <div class="cart_popup_items">
+          <img class="cart_popup_image" src="${cart_itmes[3]}" />
+          <a>${cart_itmes[0]}</a>
+          <a class="price_popup_contener">${cart_itmes[1]}x${cart_itmes[2]}</a>
+          <a class="trash_icon"><i class="fa fa-trash-o"></i></a>
+        </div>
+      `;
+      document.getElementById('popup_contener').appendChild(div);
+      document.getElementById("cart_items_num").innerHTML = " ";
+      let cartIcon = document.getElementById("cart_items_num");
+      var text = document.createTextNode(obj.length);
+      cartIcon.appendChild(text);
+      cartIcon.style.display = "block";
+    } else {
+      alert('How Many Pieces?')
+    }
+  }
